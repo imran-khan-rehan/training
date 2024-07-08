@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-employee-table
+      author: imran
+      changes:
+        - createTable:
+            tableName: EMPLOYEES
+            columns:
+              - column:
+                  name: emp_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: emp_pk
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: join_at
+                  type: datetime
+              - column:
+                  name: salary
+                  type: bigint
+
+  - changeSet:
+      id: insert-employee-data
+      author: imran
+      changes:
+        - insert:
+            tableName: EMPLOYEES
+            columns:
+              - column:
+                  name: emp_id
+                  value: '1'
+              - column:
+                  name: name
+                  value: 'imran'
+              - column:
+                  name: join_at
+                  value: '2024-01-01T10:00:00'
+              - column:
+                  name: salary
+                  value: '500'
