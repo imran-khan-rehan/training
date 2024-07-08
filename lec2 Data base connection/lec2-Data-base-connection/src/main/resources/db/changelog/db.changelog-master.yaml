@@ -1,0 +1,74 @@
+databaseChangeLog:
+  - changeSet:
+      id: schema-0.0.1
+      author: news team
+      changes:
+        - createTable:
+            tableName: news
+            columns:
+              - column:
+                  name: news_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: news_pk
+              - column:
+                  name: title
+                  type: varchar(255)
+              - column:
+                  name: details
+                  type: varchar(1000)
+              - column:
+                  name: reported_by
+                  type: varchar(255)
+              - column:
+                  name: reported_at
+                  type: datetime
+        # Removed redundant `addPrimaryKey` as `primaryKey: true` in `createTable` already handles primary key creation
+
+  - changeSet:
+      id: data-0.0.1
+      author: news team
+      changes:
+        - insert:
+            tableName: news
+            columns:
+              - column:
+                  name: news_id
+                  value: '123'
+              - column:
+                  name: title
+                  value: 'title 123'
+              - column:
+                  name: details
+                  value: 'details 123'
+              - column:
+                  name: reported_by
+                  value: 'reporter 123'
+              - column:
+                  name: reported_at
+                  value: '2000-01-01T12:00:00'
+
+  - changeSet:
+      id: data-0.0.2
+      author: news team
+      changes:
+        - insert:
+            tableName: news
+            columns:
+              - column:
+                  name: news_id
+                  value: '1234'
+              - column:
+                  name: title
+                  value: 'title 1234'
+              - column:
+                  name: details
+                  value: 'details 1234'
+              - column:
+                  name: reported_by
+                  value: 'reporter 1234'
+              - column:
+                  name: reported_at
+                  value: '2000-02-01T12:00:00'
