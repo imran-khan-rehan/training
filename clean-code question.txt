@@ -1,0 +1,13 @@
+Chapter 3:
+1. Which of the following best describes the principle of “Function should do one thing”?
+a) Functions should perform only one action, not multiple tasks
+b) Functions should only contain one line of code
+c) Functions should only return a single value
+d) Functions should be split into multiple smaller functions
+
+Chapter 4:
+1. What is a key reason to avoid comments that describe the implementation details of a function?
+a) It reduces code efficiency
+b) It indicates that the code might be too complex and needs refactoring
+c) It makes the code harder to understand
+d) It makes the code run slower
